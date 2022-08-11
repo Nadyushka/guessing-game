@@ -5,13 +5,14 @@ class GuessingGame {
 	}
 
 	setRange(min, max) {
-		for (let i = min+1; i <= max; i++) {
+		for (let i = min; i < max; i++) {
 			this.array.push(i);
 		}
+
 	}
 
 	guess() {
-		return this.array[0];
+		return this.array[Math.ceil(this.array.length / 2)];
 	}
 
 
@@ -20,7 +21,7 @@ class GuessingGame {
 	}
 
 	greater() {
-		this.array = this.array.slice(Math.floor(this.array.length / 2), this.array.length);
+		this.array = this.array.slice(Math.ceil (this.array.length / 2));
 
 	}
 }
