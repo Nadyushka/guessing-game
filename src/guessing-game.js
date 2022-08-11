@@ -4,23 +4,23 @@ class GuessingGame {
 	}
 
 	setRange(min = 0, max) {
-		this.guess = max;
-	}
-
-	guess() {
-		if (this.guess === number) {
-			return this.guess;
-		} else if (this.guess > number) {
-			
+		this.array = [];
+		for (let i = 0; i < max; i++) {
+			this.array.push(i);
 		}
 	}
 
+	guess() {
+		return this.array.length;
+	}
+
+
 	lower() {
-		this.guess = this.guess / 2;
+		return this.array.slice(0, Math.ceil(this.array.length / 2));
 	}
 
 	greater() {
-		this.guess = this.guess + this.guess / 2;
+		return this.array.slice(Math.ceil(this.array.length / 2), this.array.length - 1);
 	}
 }
 
